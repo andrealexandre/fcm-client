@@ -1,5 +1,7 @@
 package com.google.fcm;
 
+import java.io.IOException;
+
 /**
  * Interface responsible for top level message sending.
  *
@@ -8,6 +10,6 @@ package com.google.fcm;
  */
 public interface Sender {
 
-    Result send(Message message);
+    Result send(Message message) throws IOException;
 
 }
