@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * @author André Alexandre
- * @since 1.9.0
+ * @since 1.0.0
  */
 @Data
 @Builder
