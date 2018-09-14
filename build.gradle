@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'net.ltgt.apt' version '0.10'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+version = '1.2.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor 'org.projectlombok:lombok:1.18.2'
+    compileOnly 'org.projectlombok:lombok:1.18.2'
+    compile('org.codehaus.groovy:groovy:2.5.2',
+            'org.apache.httpcomponents:httpcomponents-client:4.5.6',
+            'com.google.code.gson:gson:2.8.5',
+            'org.slf4j:slf4j-api:1.7.25')
+    testCompile('org.mockito:mockito-android:2.22.0',
+                'org.codehaus.groovy:groovy-all:2.5.2',
+                'org.spockframework:spock-core:1.1-groovy-2.3')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+sourceSets {
+    main {
+         java {
+            srcDirs = ['src/main']
+         }
+    }
+
+    test {
+        java {
+            srcDirs = ['src/test']
+        }
+    }
+}
